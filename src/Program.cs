@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-public class Smartphone
+public class Smartphone : IComparable
 {
     public string model;
     public int price;
@@ -10,7 +10,7 @@ public class Smartphone
 
     public class Program
     {
-
+       
     }
 
     public Smartphone(string model, int price, int diagonal)
@@ -24,6 +24,25 @@ public class Smartphone
     {
         return string.Format("Модель: {0}  Цена: {1} Размер диагонали: {2}", model, price, diagonal);
     }
+
+    public int CompareTo(object obj)
+    {
+        Smartphone compared = obj as Smartphone;
+        if (compared != null)
+        {
+            int result = diagonal.CompareTo(compared.diagonal);
+            if (result != 0)
+            {
+                return result;
+            }
+            return model.CompareTo(compared.model);
+        }
+        else
+        {
+            throw new Exception("Невозможно сравнить два объекта");
+        }
+    }
+
 }
 
 public class GadgetFactory
@@ -35,6 +54,29 @@ public class GadgetFactory
     {
         this.cntPhones = cntPhones;
         Phones = new Smartphone[cntPhones];
+    }
+
+    public void Fill()
+    {
+        string model;
+        int price;
+        int diagonal;
+        for (int i = 0; i < this.cntPhones; i++)
+        {
+            Console.Write("[Смартфон № " + (i + 1) + "]");
+            Console.Write("Модель:");
+            model = Console.ReadLine();
+            Console.Write("Цена:");
+            price = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Размер диагонали экрана:");
+            diagonal = Convert.ToInt32(Console.ReadLine());
+            this.Phones[i + 1] = new Smartphone(model, price, diagonal);
+        }
+    }
+
+    public void Sort()
+    {
+        Array.Sort(this.Phones);
     }
 
     public void PrintToFile()
