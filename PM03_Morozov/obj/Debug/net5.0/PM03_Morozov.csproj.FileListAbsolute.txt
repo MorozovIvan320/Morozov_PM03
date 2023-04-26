@@ -1,0 +1,16 @@
+F:\PM03\PM03_Morozov\bin\Debug\net5.0\PM03_Morozov.exe
+F:\PM03\PM03_Morozov\bin\Debug\net5.0\PM03_Morozov.deps.json
+F:\PM03\PM03_Morozov\bin\Debug\net5.0\PM03_Morozov.runtimeconfig.json
+F:\PM03\PM03_Morozov\bin\Debug\net5.0\PM03_Morozov.runtimeconfig.dev.json
+F:\PM03\PM03_Morozov\bin\Debug\net5.0\PM03_Morozov.dll
+F:\PM03\PM03_Morozov\bin\Debug\net5.0\ref\PM03_Morozov.dll
+F:\PM03\PM03_Morozov\bin\Debug\net5.0\PM03_Morozov.pdb
+F:\PM03\PM03_Morozov\obj\Debug\net5.0\PM03_Morozov.csproj.AssemblyReference.cache
+F:\PM03\PM03_Morozov\obj\Debug\net5.0\PM03_Morozov.GeneratedMSBuildEditorConfig.editorconfig
+F:\PM03\PM03_Morozov\obj\Debug\net5.0\PM03_Morozov.AssemblyInfoInputs.cache
+F:\PM03\PM03_Morozov\obj\Debug\net5.0\PM03_Morozov.AssemblyInfo.cs
+F:\PM03\PM03_Morozov\obj\Debug\net5.0\PM03_Morozov.csproj.CoreCompileInputs.cache
+F:\PM03\PM03_Morozov\obj\Debug\net5.0\PM03_Morozov.dll
+F:\PM03\PM03_Morozov\obj\Debug\net5.0\ref\PM03_Morozov.dll
+F:\PM03\PM03_Morozov\obj\Debug\net5.0\PM03_Morozov.pdb
+F:\PM03\PM03_Morozov\obj\Debug\net5.0\PM03_Morozov.genruntimeconfig.cache
