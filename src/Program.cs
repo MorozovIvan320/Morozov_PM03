@@ -12,19 +12,39 @@ public class Smartphone : IComparable
     {
         public static void Main(string[] args)
         {
-            int cntPhones = 0;
-            Console.WriteLine("Количество устройств:");
-            cntPhones = Convert.ToInt32(Console.ReadLine());
-            if (cntPhones < 1)
+            try
             {
-                Environment.Exit(0);
+                int cntPhones = 0;
+                Console.WriteLine("Количество устройств:");
+                cntPhones = Convert.ToInt32(Console.ReadLine());
+                if (cntPhones < 1)
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    GadgetFactory gadgetFactory = new GadgetFactory(cntPhones);
+                    gadgetFactory.Fill();
+                    gadgetFactory.Sort();
+                    gadgetFactory.PrintToFile();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                GadgetFactory gadgetFactory = new GadgetFactory(cntPhones);
-                gadgetFactory.Fill();
-                gadgetFactory.Sort();
-                gadgetFactory.PrintToFile();
+                int cntPhones = 0;
+                Console.WriteLine("Количество устройств:");
+                cntPhones = Convert.ToInt32(Console.ReadLine());
+                if (cntPhones < 1)
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    GadgetFactory gadgetFactory = new GadgetFactory(cntPhones);
+                    gadgetFactory.Fill();
+                    gadgetFactory.Sort();
+                    gadgetFactory.PrintToFile();
+                }
             }
         }
     }
@@ -77,22 +97,33 @@ public class GadgetFactory
         string model;
         int price;
         int diagonal;
-        for (int i = 0; i < this.cntPhones; i++)
+        try
         {
-            Console.WriteLine("[Смартфон № " + (i + 1) + "]");
-            Console.WriteLine("Модель:");
-            model = Console.ReadLine();
-            Console.WriteLine("Цена:");
-            price = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Размер диагонали экрана:");
-            diagonal = Convert.ToInt32(Console.ReadLine());
-            this.Phones[i] = new Smartphone(model, price, diagonal);
+            for (int i = 0; i < this.cntPhones; i++)
+            {
+                Console.WriteLine("[Смартфон № " + (i + 1) + "]");
+                Console.WriteLine("Модель:");
+                model = Console.ReadLine();
+                Console.WriteLine("Цена:");
+                price = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Размер диагонали экрана:");
+                diagonal = Convert.ToInt32(Console.ReadLine());
+                this.Phones[i] = new Smartphone(model, price, diagonal);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine("Введенные данные некорректны");
+            Console.WriteLine("Введите данные заново:");
+            Fill();
         }
     }
 
     public void Sort()
     {
         Array.Sort(this.Phones);
+        Array.Reverse(this.Phones);
     }
 
     public void PrintToFile()
